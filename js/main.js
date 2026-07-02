@@ -23,9 +23,7 @@ const observer = new IntersectionObserver(
 sections.forEach(s => observer.observe(s));
 
 /* ── Fade-in on scroll ───────────────────────── */
-const fadeEls = document.querySelectorAll(
-  '.pub-card, .proj-card, .tl-item'
-);
+const fadeEls = document.querySelectorAll('.tl-item');
 
 const fadeObserver = new IntersectionObserver(
   (entries) => {

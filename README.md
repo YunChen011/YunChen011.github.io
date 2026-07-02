@@ -7,9 +7,8 @@ A single-page static site (plain HTML/CSS/JS, no build step), deployed via Netli
 ```
 index.html          ← all page content
 css/style.css        ← design tokens, fonts, layout
-js/main.js           ← nav scroll-spy + fade-in-on-scroll animations
+js/main.js           ← nav scroll-spy + fade-in-on-scroll animations + CV print trigger
 assets/images/       ← photo + project figures
-files/CV_yunchen.pdf  ← CV, linked from the hero "CV" button
 netlify.toml          ← tells Netlify to publish the repo root, no build command
 ```
 
@@ -22,7 +21,7 @@ and edit the markup directly:
 | Section | What's there |
 |---|---|
 | `<!-- NAVIGATION -->` | Top nav links |
-| `<!-- HERO -->` | Name, tagline, bio blurb, badges, CTA buttons (email/LinkedIn/CV), photo |
+| `<!-- HERO -->` | Name, tagline, bio blurb, badges, CTA buttons (email/LinkedIn), photo |
 | `<!-- ABOUT -->` (`id="about"`) | Bio paragraphs, research interest tags, education list |
 | `<!-- PUBLICATIONS -->` (`id="publications"`) | One `.pub-card` per paper — add/remove/reorder freely; add `class="pub-card highlight"` + a `<span class="pub-award">` to call one out |
 | `<!-- EXPERIENCE -->` (`id="experience"`) | One `.tl-item` per role, reverse-chronological |
@@ -33,8 +32,8 @@ To swap the profile photo, replace `assets/images/Yun_photo.png` (any
 image works — it's cropped to a circle via CSS `object-fit: cover`, so
 it doesn't need to be pre-cropped).
 
-To update the CV, replace `files/CV_yunchen.pdf` with the same filename,
-or update the `href` in the hero's CV button if you rename it.
+There's no CV button/file right now — it was removed while a better
+approach (e.g. compiling one from the page content) is worked out.
 
 Colors/fonts are CSS variables at the top of `css/style.css` under
 `:root { ... }` — change `--terra` etc. to retheme, or the Google Fonts
