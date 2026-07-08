@@ -1,0 +1,302 @@
+%-------------------------
+% Resume in Latex
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,10pt]{article}
+\usepackage{setspace}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[pdftex]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{ragged2e}
+\usepackage{lastpage}
+\usepackage{geometry}
+\usepackage{fancyref}
+\usepackage{nameref}
+\usepackage{fontawesome5}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\makeatletter
+\let\orgdescriptionlabel\descriptionlabel
+\renewcommand*{\descriptionlabel}[1]{%
+  \let\orglabel\label
+  \let\label\@gobble
+  \phantomsection
+  \edef\@currentlabel{#1}%
+  \let\label\orglabel
+  \orgdescriptionlabel{#1}%
+}
+\makeatother
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\geometry{letterpaper,left=1cm,right=1cm,top=1cm, bottom=1cm}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-5pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-2pt}]
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item\small{
+    \textbf{#1}{#2 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{.98\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \small{#2} \\
+      \textit{\small#3} & {\small #4}
+    \end{tabular*}
+    \vspace{-2pt}
+}
+\newcommand{\projtitle}[2]{
+  \vspace{-1pt}
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{- }\textit{#1} & {\small #2} \\
+    \end{tabular*}
+    \vspace{-5pt}
+}
+\newcommand{\projcontent}[1]{\vspace{-1pt}\textbf{- }{\small #1}\vspace{-3pt}}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-2pt}}
+
+\renewcommand{\labelitemii}{$\circ$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{enumerate}[label=\arabic*., leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{enumerate}\vspace{-2pt}}
+\newcommand{\resumeItemListStart}{\vspace{-2pt}\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeItemListEnd}{\end{itemize}}
+
+%-------------------------------------------
+%%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\justifying
+%----------HEADING-----------------
+\begin{center}
+  \textbf{\Large Yun Chen} \\
+  \vspace{2pt}
+  \small
+  \faMapMarker*~San Diego, CA \ \ $|$ \ \
+  \faEnvelope~\href{mailto:yunchen@qti.qualcomm.com}{yunchen@qti.qualcomm.com} \ \ $|$ \ \
+  \faGlobe~\url{yunchen011.github.io} \ \ $|$ \ \
+  \faLinkedin~\url{linkedin.com/in/yun-chen-site}
+\end{center}
+
+
+%-----------EDUCATION-----------------
+\section{Education}
+\resumeItemListStart
+\resumeSubheading
+      {University of California San Diego (UCSD)}{San Diego, CA}
+      {Ph.D., Electrical and Computer Engineering (Degree Conferred)}{Apr. 2024 - Apr. 2025}
+\resumeSubheading
+      {North Carolina State University (NCSU)}{Raleigh, NC}
+      {Ph.D. Program, Electrical and Computer Engineering (GPA: 4.0/4.0) -- transferred to UCSD}{Jan. 2021 - Mar. 2024}
+\resumeSubheading
+      {The University of Texas at Austin (UT Austin)}{Austin, TX}
+      {M.S., Electrical and Computer Engineering (GPA: 3.95/4.0)}{Aug. 2018 - Dec. 2020}
+\resumeSubheading
+      {Southeast University}{Nanjing, China}
+      {Bachelor of Engineering in Information Engineering (GPA: 89.13/100)}{Aug. 2013 - Jun. 2017}
+\resumeItemListEnd
+
+
+%-----------EXPERIENCE-----------------
+\section{Research and Industry Experience}
+
+\vspace{2pt}\noindent\textbf{\textit{Industry Experience}}
+    \resumeItemListStart
+
+\resumeSubheading{Senior Engineer}{Apr. 2025 - Present}
+     {Qualcomm Technologies, Inc.}{}
+     \resumeItemListStart
+       \resumeSubItem{}{Full-time engineering role, building on Ph.D. research and prior Qualcomm internships}
+     \resumeItemListEnd
+
+\resumeSubheading{Engineering Intern}{Summers 2021, 2022 \& 2023}
+     {Qualcomm Technologies, Inc.}{}
+     \resumeItemListStart
+       % ML-based detection and localization for indoor device-free RF sensing
+       \resumeSubItem{}{ML-based detection and localization for indoor device-free RF sensing -- Dr. Marwen Zorgui, Dr. Arumugam Kannan (2023)}
+       % Precise indoor positioning using semi-supervised learning
+       \resumeSubItem{}{Precise indoor positioning using semi-supervised learning -- Dr. Srinivas Yerramalli (2022)}
+       % ML assisted coordinated multi-point transmission for ultra-reliable services
+       \resumeSubItem{}{ML-assisted coordinated multi-point transmission for ultra-reliable services -- Dr. Taesang Yoo (2021)}
+     \resumeItemListEnd
+
+\resumeSubheading{Research Intern}{Summers 2019 \& 2020}
+     {Ericsson Inc. -- Prof. Ali Khayrallah}{}
+     \resumeItemListStart
+       % Optimizations for A2G network deployments for high user throughput
+       \resumeSubItem{}{Deep learning-based 5G air-to-ground network design and optimization [\ref{pub:S1}][\ref{pub:C1b}] (2020)}
+       % Handover management for UAVs using Q-learning and deep Q-network
+       \resumeSubItem{}{Reinforcement-learning-based drone mobility and handover management [\ref{pub:C1a}][\ref{pub:C0a}] (2019)}
+     \resumeItemListEnd
+
+    \resumeItemListEnd
+
+\vspace{4pt}\noindent\textbf{\textit{Academic Research}}
+    \resumeItemListStart
+
+\resumeSubheading{Graduate Researcher}{Sep. 2019 - Mar. 2025}
+     {WiSeCom Lab / UT Austin, NC State University, UC San Diego -- Prof. Nuria Gonz\'{a}lez Prelcic}{}
+     \resumeItemListStart
+       \resumeSubItem{}{Hybrid model/data-driven mmWave localization, channel estimation, and user tracking for ISAC systems}
+       \resumeSubItem{}{Attention-network-based vehicle position and channel tracking at mmWave [\ref{pub:J3}][\ref{pub:J2}][\ref{pub:C4}]}
+       \resumeSubItem{}{Collaborative V2V sidelink localization for orientation estimation and position tracking [\ref{pub:C7}]}
+       \resumeSubItem{}{Low-complexity mmWave channel estimation via ESPRIT-D [\ref{pub:C5}]}
+       \resumeSubItem{}{Radar-to-communication channel mapping for mmWave link configuration [\ref{pub:B1}][\ref{pub:J1}][\ref{pub:C2}]}
+       \resumeSubItem{}{UAV navigation using a monocular camera and deep reinforcement learning [\ref{pub:C0b}]}
+     \resumeItemListEnd
+
+\resumeSubheading{Undergraduate Research Assistant}{Jan. 2017 - Jun. 2017}
+     {Southeast University -- Prof. Luxi Yang, Prof. Chunguo Li}{}
+     \resumeItemListStart
+       % Trajectory optimizations for bicycle travelers using Q-learning
+       \resumeSubItem{}{Trajectory optimization for bicycle trip planning using reinforcement learning [\ref{pub:Ce}]}
+       % Cloud cache management using transfer learning
+       \resumeSubItem{}{Proactive caching in wireless networks using transfer learning [\ref{pub:Cf}]}
+       % Mobile edge computing resource allocation using an Echo State Network
+       \resumeSubItem{}{Mobile edge computing resource allocation using an Echo State Network}
+     \resumeItemListEnd
+
+    \resumeItemListEnd
+
+\section{Patents}
+\resumeItemListStart
+  \resumeSubItem{}{X. Lin, \textbf{Y. Chen}, M. Mozaffari, T. Khan, ``Efficient 3D Mobility Support Using Reinforcement Learning''. US20240056933A1. Feb.
+2024}\label{pat:P1}
+  \resumeSubItem{}{M. Mozaffari, X. Lin,  T. Khan, M. Afshang, \textbf{Y. Chen}, ``Network Design and Optimization Using Deep Learning''. US20230388196A1. Nov. 2023}\label{pat:P2}
+\resumeItemListEnd
+
+\section{Publications}
+  \resumeSubHeadingListStart
+
+  \resumeSubItem{}{\textbf{Y. Chen}, ``Hybrid Model/Data-Driven Solutions in ISAC: Improving Link Establishment, Channel Estimation, and User Localization in mmWave Vehicular Networks", Ph.D. Dissertation, University of California San Diego, Advisor: Prof. Nuria Gonz\'{a}lez-Prelcic, 2026, pending release.}\label{pub:D1}
+
+  \resumeSubItem{}{\textbf{Y. Chen}, N. Gonz\'{a}lez-Prelcic, T. Shimizu, C. Mahabal, ``A Hybrid Model/Data-Driven Solution to Channel, Position, and Orientation Tracking in mmWave Vehicular Systems", \emph{IEEE Journal on Selected Areas in Communications}, vol. 44, pp. 927--941, 2026.}\label{pub:J3}
+
+  \resumeSubItem{}{S. Javid, \textbf{Y. Chen}, N. Gonz\'{a}lez-Prelcic, ``Learning-Based Cross-Frequency Channel Prediction in the Upper Mid-band", in \emph{IEEE Global Communications Conference (GLOBECOM 2025)}, pp. 6394--6399, Dec. 2025.}\label{pub:C8}
+
+  \resumeSubItem{}{\textbf{Y. Chen}, N. Gonz\'{a}lez-Prelcic, T. Shimizu, C. Mahabal, ``Collaborative Position and Orientation Tracking in mmWave Vehicular Systems Exploiting V2I and V2V Links", in \emph{2024 58th Asilomar Conference on Signals, Systems, and Computers}, pp. 407--412, Oct. 2024.}\label{pub:C7}
+
+  \resumeSubItem{}{B. Kumar, \textbf{Y. Chen}, N. Gonz\'{a}lez-Prelcic, T. Shimizu, A. Ganlath, ``DeepSatLoc: A Multimodal Fusion Strategy for Enhanced Localization in Urban Canyons Exploiting GPS and LEO Satellite Communication Signals", in \emph{2024 58th Asilomar Conference on Signals, Systems, and Computers}, pp. 842--849, Oct. 2024.}\label{pub:C6}
+
+  \resumeSubItem{}{\textbf{Y. Chen}, N. Gonz\'{a}lez-Prelcic, T. Shimizu, H. Lu, C. Mahabal, ``Beamspace ESPRIT-D for Joint 3D Angle and Delay Estimation for Joint Localization and Communication at MmWave", in \emph{IEEE International Conference on Communications (ICC 2024)}, pp. 1915--1920, Jun. 2024.}\label{pub:C5}
+
+  \resumeSubItem{}{\textbf{Y. Chen}, N. Gonz\'{a}lez-Prelcic, T. Shimizu, H. Lu, ``Learning to Localize with Attention: from sparse mmWave channel estimates from a single BS to high accuracy 3D location", \emph{arXiv:2307.00167}, Jun. 2023, revised Mar. 2025.}\label{pub:J2}
+
+  \resumeSubItem{}{\textbf{[Best Student Paper]} \textbf{Y. Chen}, N. Gonz\'{a}lez-Prelcic, T. Shimizu, H. Lu, C. Mahabal, ``Sparse Recovery with Attention: A Hybrid Data/Model Driven Solution for High Accuracy Position and Channel Tracking at mmWave", in \emph{2023 IEEE 24th International Workshop on Signal Processing Advances in Wireless Communications (SPAWC)}, pp. 491--495, Sep. 2023.}\label{pub:C4}
+
+  \resumeSubItem{}{N. Gonz\'{a}lez-Prelcic, A. Ali, \textbf{Y. Chen}, ``Radar-Aided Millimeter Wave Communication", in \emph{Signal Processing for Joint Radar Communications}, Wiley-IEEE Press, pp. 155--177, Mar. 2024.}\label{pub:B1}
+
+  \resumeSubItem{}{A. Graff, \textbf{Y. Chen}, N. Gonz\'{a}lez-Prelcic, T. Shimizu, ``Deep Learning-Based Link Configuration for Radar-Aided Multiuser mmWave Vehicle-to-Infrastructure Communication", \emph{IEEE Transactions on Vehicular Technology}, vol. 72, no. 6, pp. 7454--7468, Jun. 2023.}\label{pub:J1}
+
+  \resumeSubItem{}{\textbf{Y. Chen}, J. Palacios, N. Gonz\'{a}lez-Prelcic, T. Shimizu, H. Lu, ``Joint Initial Access and Localization in Millimeter Wave Vehicular Networks: a Hybrid Model/Data Driven Approach", in \emph{2022 IEEE 12th Sensor Array and Multichannel Signal Processing Workshop (SAM)}, pp. 355--359, Jun. 2022.}\label{pub:C3}
+
+  \resumeSubItem{}{G. Geraci, A. Garcia-Rodriguez, M. Azari, A. Lozano, M. Mezzavilla, S. Chatzinotas, \textbf{Y. Chen}, S. Rangan, M. Renzo, ``What Will the Future of UAV Cellular Communications Be? A Flight From 5G to 6G", \emph{IEEE Communications Surveys \& Tutorials}, vol. 24, no. 3, pp. 1304--1335, 2022.}\label{pub:S1}
+
+  \resumeSubItem{}{\textbf{Y. Chen}, A. Graff, N. Gonz\'{a}lez-Prelcic, T. Shimizu, ``Radar Aided mmWave Vehicle-to-Infrastructure Link Configuration Using Deep Learning", in \emph{2021 IEEE Global Communications Conference (GLOBECOM)}, pp. 1--6, Dec. 2021.}\label{pub:C2}
+
+  \resumeSubItem{}{\textbf{Y. Chen}, X. Lin, T. Khan, M. Afshang, M. Mozaffari, ``5G Air-to-Ground Network Design and Optimization: A Deep Learning Approach", in \emph{2021 IEEE 93rd Vehicular Technology Conference (VTC2021-Spring)}, pp. 1--6, Apr. 2021.}\label{pub:C1b}
+
+  \resumeSubItem{}{\textbf{Y. Chen}, X. Lin, T. Khan, M. Mozaffari, ``A Deep Learning Approach to Efficient Drone Mobility Support", in \emph{Proceedings of the 2nd ACM MobiCom Workshop on Drone Assisted Wireless Communications for 5G and Beyond}, pp. 67--72, Sep. 2020.}\label{pub:C1a}
+
+  \resumeSubItem{}{\textbf{Y. Chen}, N. Gonz\'{a}lez-Prelcic, R. W. Heath, ``Collision-Free UAV Navigation with a Monocular Camera Using Deep Reinforcement Learning", in \emph{2020 IEEE 30th International Workshop on Machine Learning for Signal Processing (MLSP)}, pp. 1--6, Sep. 2020.}\label{pub:C0b}
+
+  \resumeSubItem{}{\textbf{[Best Paper]} \textbf{Y. Chen}, X. Lin, T. Khan, M. Mozaffari, ``Efficient Drone Mobility Support Using Reinforcement Learning'', in \emph{2020 IEEE Wireless Communications and Networking Conference (WCNC)}, pp. 1--6, May 2020.}\label{pub:C0a}
+
+  \resumeSubItem{}{\textbf{Y. Chen}, W. Yan, C. Li, Y. Huang, and L. Yang, ``Personalized Optimal Bicycle Trip Planning Based on Q-learning Algorithm'', in \emph{2018 IEEE Wireless Communications and Networking Conference (WCNC)}, pp. 1--6, Apr. 2018.}\label{pub:Ce}
+
+  \resumeSubItem{}{Y. Wang, \textbf{Y. Chen}, H. Dai, Y. Huang, and L. Yang, ``A Learning-Based Approach for Proactive Caching in Wireless Communication Networks'', in \emph{2017 9th International Conference on Wireless Communications and Signal Processing (WCSP)}, pp. 1--6, Oct. 2017.}\label{pub:Cf}
+
+\resumeSubHeadingListEnd
+
+
+\section{Teaching Experience}
+  \resumeItemListStart
+    \resumeSubheading
+      {Teaching Assistant}{Winter 2025}
+      {Circuits and Systems, UC San Diego - Prof. Robert Heath}{}
+    \resumeSubheading
+      {Teaching Assistant}{Spring 2019}
+      {Probability and Random Process, UT Austin - Prof. Pedro Santacruz}{}
+  \resumeItemListEnd
+
+%---------Honors & Awards------------
+\section{Honors and Awards}
+
+\resumeItemListStart
+\resumeSubItem{}{Best Student Paper Award in \textit{IEEE SPAWC 2023}
+\hfill
+Sep. 2023
+}
+\resumeSubItem{}{Summer Graduate Fellowship of the College of Engineering at NCSU
+\hfill
+May 2022
+}
+
+\resumeSubItem{}{\href{https://wcnc2020.ieee-wcnc.org/program/ieee-wcnc-2020-best-paper-selection}{Best Paper Award} in \textit{IEEE WCNC 2020} (Top 4 out of 400 accepted papers)
+\hfill
+May 2020
+}
+\resumeSubItem{}{Excellent Graduation Project at SEU (Top 10 out of 260 projects)
+\hfill
+Jun. 2017
+}
+ \resumeSubItem{}
+ {Honorable Mention in the Mathematical Contest in Modeling (MCM)
+      \hfill
+      Apr. 2016
+}
+ \resumeSubItem{}{Leike Scholarship at SEU (Top 5\% out of 1600 students)
+\hfill
+Jun. 2015
+}
+ \resumeSubItem{}{$2^{nd}$ Prize out of 1,000 students in Provincial Advanced Mathematics Competition
+\hfill
+Jun. 2014
+}
+
+\resumeItemListEnd
+
+%--------PROGRAMMING SKILLS------------
+\section{Professional Skills}
+\resumeItemListStart
+\resumeSubItem{}
+{\textbf{Skills}:}
+
+\projcontent{Programming languages: Python, Matlab, C++, HTML}
+
+\projcontent{Platforms: PyTorch, Tensorflow}
+
+\projcontent{Simulation tools: Wireless Insite, Robot Operating System (ROS)}
+
+\resumeSubItem{}
+      {\textbf{Language}{: English (fluent), Mandarin (native)}}
+
+  \resumeItemListEnd
+
+
+%-------------------------------------------
+\end{document}
