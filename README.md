@@ -32,8 +32,10 @@ To swap the profile photo, replace `assets/images/Yun_photo.png` (any
 image works — it's cropped to a circle via CSS `object-fit: cover`, so
 it doesn't need to be pre-cropped).
 
-There's no CV button/file right now — it was removed while a better
-approach (e.g. compiling one from the page content) is worked out.
+The CV lives in `resume/` (LaTeX source `resume.tex` + compiled
+`resume.pdf`). The top-right nav links to `resume/resume.pdf` via the
+`.nav-cv` pill; to update the CV, edit `resume/resume.tex` and recompile
+(`latexmk -pdf resume.tex`) — see `resume/README.md`.
 
 Colors/fonts are CSS variables at the top of `css/style.css` under
 `:root { ... }` — change `--terra` etc. to retheme, or the Google Fonts
