@@ -1,1 +1,23 @@
 .DS_Store
+
+# Editor / tooling directories
+.continue/
+.agents/
+.claude/
+
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.synctex(busy)
+
+# resume/ — publish only the public CV (resume.pdf) and its source.
+# Everything else in this folder is private EB-1 petition / personal
+# material and must NOT be pushed to the public site repo.
+resume/*
+!resume/README.md
+!resume/resume.tex
+!resume/resume.pdf
