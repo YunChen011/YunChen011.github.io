@@ -46,7 +46,8 @@ const PUBLICATIONS_MD = String.raw`
 Authors: Y. Chen
 Venue: Ph.D. Dissertation · UC San Diego · Advisor: Prof. Nuria González-Prelcic · 2026
 Highlight: true
-Pending: Pending Release
+Summary: ProQuest Dissertations & Theses Global, Publication No. 32738029
+Link ProQuest: https://www.proquest.com/docview/3373265746
 
 ---
 
